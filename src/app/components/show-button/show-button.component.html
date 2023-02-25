@@ -1,0 +1,14 @@
+<div *ngIf="!visible; else other">
+<button  (click)="toggle()"
+  class="text-2xl dark:text-white   dark:from-cyan-100 dark:to-cyan-200 transition ease-in-out delay-100  hover:-translate-y-1 hover:scale-110 shadow-lg shadow-slate-500/50 dark:shadow-cyan-400 rounded-md w-24">
+  Ocultar
+</button>
+</div>
+
+
+<ng-template #other>
+  <button (click)="toggle()"
+    class="text-2xl dark:text-white   dark:from-cyan-100 dark:to-cyan-200 transition ease-in-out delay-100  hover:-translate-y-1 hover:scale-110 shadow-lg shadow-slate-500/50 dark:shadow-cyan-400 rounded-md w-24">
+    Mostrar
+  </button>
+</ng-template>

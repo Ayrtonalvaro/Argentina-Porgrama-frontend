@@ -1,0 +1,25 @@
+<h4 class="text-white text-3xl flex justify-center mt-5">{{title}}</h4>
+<div class="p-5">
+  <form [formGroup]="skillForm" (ngSubmit)="onSubmit()">
+    <div class="flex flex-col">
+      <label class="text-white">Skill</label>
+      <input formControlName="nameSkill" class="border border-slate-300 outline-none bg-black text-white pl-2"
+        type="text" />
+    </div>
+    <div class="flex flex-col">
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Logo</label>
+      <select
+        formControlName="logoSkill"
+        class="border border-slate-300 outline-none bg-black text-white pl-2">
+        <option   *ngFor="let logo of logos" [ngValue]="logo.name">{{logo.logo}}</option>
+      </select>
+    </div>
+    <div class="flex flex-col">
+      <label class="text-white">Progeso ({{skillForm.value.porSkill}}%)</label>
+      <input formControlName="porSkill" class="border border-slate-300 outline-none bg-black text-white pl-2"
+        type="range" min="0" max="100" step="1" />
+    </div>
+    <button
+      class=" text-white rounded-sm border border-green-700 w-full hover:bg-green-700 duration-300 items-center mt-3">{{title}}
+    </button>
+  </form>

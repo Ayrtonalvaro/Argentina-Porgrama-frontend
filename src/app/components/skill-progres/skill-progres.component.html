@@ -1,0 +1,23 @@
+<div class="relative">
+<circle-progress [showTitle]="true"  [showSubtitle]="false" [showInnerStroke]="true" [title]="[skill.nameSkill] "
+  [titleColor]="'#ffffff'" [showUnits]="false" [percent]="skill.porSkill" [radius]="100" [outerStrokeWidth]="12"
+  [innerStrokeWidth]="10" [space]="-10" [innerStrokeColor]="'#e7e8ea'" [outerStrokeColor]="'#15803D'" [animation]="true" [animationDuration]="300">
+</circle-progress>
+<i class="{{skill.logoSkill}} text-white absolute top-32 left-24 text-5xl "></i>
+</div>
+<div *ngIf="isLogged" class="flex gap-5 relative ">
+  <button (click)="handleModalState()">
+    <i class="fa-solid fa-pen-to-square hover:text-green-700 duration-300  text-white text-xl"></i>
+  </button>
+  <button (click)="deleteSkill(skill.id)" type="button">
+    <i class="fa-solid fa-trash hover:text-red-700 duration-300  text-white text-xl "></i>
+  </button>
+  <div *ngIf="modalEdit" class="bg-gradient-to-r from-black to-slate-900 absolute top-0 left-8 border border-cyan-600   z-50">
+    <app-modal-skills (dataSkillsForm)="updateSkill($event)" [title]="'Actualizar'"></app-modal-skills>
+  </div>
+</div>
+
+
+
+
+

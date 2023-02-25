@@ -1,0 +1,28 @@
+<div
+  class="cursor-pointer hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-br hover:from-cyan-500 hover:to-slate-50">
+  <div class="flex justify-between">
+    <h4 class="text-4xl mb-5 text-transparent bg-clip-text bg-gradient-to-br from-slate-200 to-withe">{{project.title}}</h4>
+    <div class="flex gap-5">
+      <a href="{{project.linkGithub}}" target="_blank"><i
+          class="fa-brands fa-github text-4xl cursor-pointer text-white hover:text-dark hover:text-cyan-500  hover:duration-500"></i></a>
+      <a href="{{project.linkDeploy}}" target="_blank"><i
+          class="fa-solid fa-arrow-up-right-from-square text-4xl cursor-pointer text-white hover:text-dark hover:text-cyan-500  hover:duration-600"></i></a>
+    </div>
+
+  </div>
+  <div class="grayscale  hover:grayscale-0 cursor-pointer duration-500 ">
+    <img class="object-contain" src="{{project.urlImg}}" />
+  </div>
+  <div  *ngIf="isLogged" class="flex gap-5 relative mt-5 ">
+    <button (click)="showModal()">
+      <i class="fa-solid fa-pen-to-square hover:text-green-700 duration-300  text-white text-xl"></i>
+    </button>
+    <button (click)="projectDelete(project.id)" type="button">
+      <i  class="fa-solid fa-trash hover:text-red-700 duration-300  text-white text-xl "></i>
+    </button>
+    <div *ngIf="stateModal"
+      class="bg-gradient-to-r from-black to-slate-900 absolute top-0 left-8 border border-cyan-600   z-50">
+      <app-modal-form  (dataFormProject)="setFormProject($event)" [title]="'Actualizar'"></app-modal-form>
+    </div>
+  </div>
+</div>

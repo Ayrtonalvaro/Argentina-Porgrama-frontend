@@ -1,0 +1,30 @@
+<form [formGroup]="experienceForm " (ngSubmit)="onSubmit()">
+  <div class="relative">
+    <h4 class="text-white text-3xl flex justify-center mt-5"> {{title}}</h4>
+    <i (click)="closeModal()"
+      class="fa-solid fa-xmark absolute bottom-10 text-xl text-white cursor-pointer hover:text-red-500"></i>
+  </div>
+  <div class="flex flex-col">
+    <label class="text-white">Empresa</label>
+    <input type="text" formControlName="nameExperience" required
+      class="border border-slate-300 outline-none bg-black text-white pl-2" />
+  </div>
+  <div class="flex flex-col">
+    <label class="text-white ">Titulo</label>
+    <input type="text" formControlName="jobTitle" required
+      class="border border-slate-300 outline-none bg-black text-white pl-2" />
+  </div>
+  <div class="flex flex-col">
+    <label class="text-white ">Año</label>
+    <input type="text" name="time" formControlName="time" required
+      class="border border-slate-300 outline-none bg-black text-white pl-2" />
+  </div>
+  <div class="flex flex-col">
+    <label class="text-white">Descripcion</label>
+    <textarea type="text" formControlName="descriptionExperience" required
+      class="w-full h-20 border border-slate-300 outline-none bg-black text-white pl-2"></textarea>
+  </div>
+  <button
+    class=" text-white rounded-sm border border-green-700 w-full hover:bg-green-700 duration-300 items-center mt-3">Agregar
+  </button>
+</form>

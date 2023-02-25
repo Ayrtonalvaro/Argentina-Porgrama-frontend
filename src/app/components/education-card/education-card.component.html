@@ -1,0 +1,21 @@
+<div class="cursor-default relative">
+  <h4 class="text-3xl text-white">{{education.nameEducacation}}</h4>
+  <p class="text-xl text-white">{{education.titleEducation}}</p>
+  <p class="text-xl text-white">{{education.descriptionEducaction}}</p>
+  <span class="text-md text-cyan-400">{{education.time}}</span>
+</div>
+<div *ngIf="isLogged" class="flex gap-5 absolute left-5 bottom-0">
+  <button  (click)="handleModalState()">
+    <i class="fa-solid fa-pen-to-square hover:text-green-700 duration-300  text-white text-xl"></i>
+  </button>
+  <button type="button" (click)="educationDelete(education.id)">
+    <i class="fa-solid fa-trash hover:text-red-700 duration-300  text-white text-xl "></i>
+  </button>
+</div>
+
+<div *ngIf="modalEdit"
+  class="bg-gradient-to-r from-black to-slate-900 absolute left-12  border border-cyan-600 w-96 h-96 z-50">
+  <div class="p-5">
+    <app-modal-education (closeModalEducation)="closeModal($event)" [title]="title" (dataFormEducation)="setDataFormEducation($event)" ></app-modal-education>
+  </div>
+</div>

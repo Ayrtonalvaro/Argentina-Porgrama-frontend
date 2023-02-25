@@ -1,0 +1,25 @@
+<section @enterState class="md:pt-48 pt-96" >
+<div class="text-start">
+  <h4 class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-br from-slate-200 to-withe mb-8">
+    Bienvenido a mi portfolio
+
+  </h4>
+  <h1 class="text-6xl font-black mt-2 text-white">
+    Mi nombre es
+    <span class="ml-5 font-black text-cyan-400" *ngIf="user">{{user.name}} {{user.surname}}</span>
+  </h1>
+  <p class="text-4xl mt-5">
+    <span class="text-slate-100 font-semibold" *ngIf="user"> {{user.title}}</span>
+  </p>
+</div>
+<app-grid-icons-links [linkGit]="gitHub" [linkLinkedIn]="linkedIn" [linkInstagram]="instagram"></app-grid-icons-links>
+<p class="mt-5 w-[600px] text-xl text-slate-300 " *ngIf="user">
+  {{user.description}}
+</p>
+
+<div class="flex container flex-col lg:items-center md:w-screen">
+  <app-gridsklls></app-gridsklls>
+</div>
+
+</section>
+

@@ -1,0 +1,23 @@
+<h4 class="text-white text-3xl flex justify-center mt-5">{{title}}</h4>
+<div class="p-5">
+  <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+    <div class="flex flex-col">
+      <label class="text-white">Titulo</label>
+      <input formControlName="title" class="border border-slate-300 outline-none bg-black text-white pl-2" type="text"  />
+    </div>
+    <div class="flex flex-col">
+      <label class="text-white ">Link GitHub</label>
+      <input formControlName="linkGithub"  class="border border-slate-300 outline-none bg-black text-white pl-2" />
+    </div>
+    <div class="flex flex-col">
+      <label class="text-white ">Link Deploy</label>
+      <input formControlName="linkDeploy"  class="border border-slate-300 outline-none bg-black text-white pl-2" />
+    </div>
+    <div class="flex flex-col">
+      <label  class="text-white">Img Url</label>
+      <input  formControlName="urlImg" class="w-full  border border-slate-300 outline-none bg-black text-white pl-2"/>
+    </div>
+    <button
+      class=" text-white rounded-sm border border-green-700 w-full hover:bg-green-700 duration-300 items-center mt-3">{{title}}
+    </button>
+  </form>

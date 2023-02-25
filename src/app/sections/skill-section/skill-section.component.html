@@ -1,0 +1,25 @@
+<div class="mt-10 relative">
+  <div class="flex  items-center mt-10 gap-5">
+    <h2 class="text-4xl text-white uppercase">Skills </h2>
+
+    <button *ngIf="isLogged" (click)="handleModal()"
+      class="text-white rounded-sm border border-green-700 w-8 hover:bg-green-700 duration-300 items-center"><i
+        class="fa-solid fa-plus"></i></button>
+    <app-show-button (open)="showSection($event)" (close)="showSection($event)"></app-show-button>
+  </div>
+  <div class="border-b w-10 border-2 border-cyan-400"></div>
+  <div *ngIf="!state">
+    <div class="grid grid-cols-4">
+      <div class="mt-5" *ngFor="let skill of skills">
+        <app-skill-progres [isLogged]="isLogged" (newUpdateSkill)="updateSkill($event)"  (idEdit)="setIdEdit($event)" (deleteId)="deleteSkill($event)" [skill]="skill"></app-skill-progres>
+      </div>
+    </div>
+
+  </div>
+  <div *ngIf="!stateModal"
+    class="bg-gradient-to-r from-black to-slate-900 absolute top-0 left-44 border border-cyan-600 w-96  z-50">
+    <div>
+      <app-modal-skills [title]="'Agregar'" (dataSkillsForm)="addSkill($event)"></app-modal-skills>
+    </div>
+  </div>
+</div>

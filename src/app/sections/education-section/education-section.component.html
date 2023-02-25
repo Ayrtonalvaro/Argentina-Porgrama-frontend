@@ -1,0 +1,25 @@
+<div class="relative">
+  <div class="flex  items-center mt-10 gap-5 ">
+    <p class="text-4xl text-white uppercase ">Educacion </p>
+    <button *ngIf="isLogged" (click)="handleModalAdd()"
+      class="text-white rounded-sm border border-green-700 w-8 hover:bg-green-700 duration-300 items-center"><i
+        class="fa-solid fa-plus"></i></button>
+    <app-show-button (open)="showSection($event)" (close)="showSection($event)"></app-show-button>
+  </div>
+  <div class="border-b w-10 border-2 border-cyan-400">
+  </div>
+  <div *ngIf="!stateSection">
+    <div *ngIf="educations" class="grid gap-5 grid-cols-2 ">
+      <div class=" h-full p-5 mt-5 border rounded-md relative" *ngFor="let education of educations ">
+        <app-education-card [isLogged]="isLogged" (idDelete)="deleteEducation($event)"
+          [education]="education" (stateModalEdit) ="handleModalEdit($event)" (idEdit)="setIdEdit($event)" (dataEditEducation)="editEducation($event)"></app-education-card>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="stateModalAdd"
+    class="bg-gradient-to-r from-black to-slate-900 absolute top-0 left-72 border border-cyan-600 w-96 h-96 z-50">
+    <div class="p-5">
+      <app-modal-education [title]="Agregar" (closeModalEducation)="closeModal($event)" (dataFormEducation)="addEducation($event)"></app-modal-education>
+    </div>
+  </div>
+</div>

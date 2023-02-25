@@ -1,0 +1,22 @@
+<div >
+  <h4 class="text-3xl text-white">{{experience.nameExperience}}</h4>
+  <p class="text-xl text-white">{{experience.jobTitle}}</p>
+  <p class="text-xl text-white">{{experience.descriptionExperience}}</p>
+  <span class="text-md text-cyan-400">{{experience.time}}</span>
+<div>
+
+  <div *ngIf="isLogged" class="flex gap-5 absolute bottom-0">
+    <button (click)="handleModalState()">
+      <i class="fa-solid fa-pen-to-square hover:text-green-700 duration-300  text-white text-xl "></i>
+    </button>
+    <button (click)="experienceDelete(experience.id)">
+      <i class="fa-solid fa-trash hover:text-red-700 duration-300  text-white text-xl "></i>
+    </button>
+  </div>
+
+  <div *ngIf="modalEdit"
+    class="bg-gradient-to-r from-black to-slate-900 absolute left-12  border border-cyan-600 w-96 h-96 z-50">
+    <div class="p-5">
+      <app-modal-experience (closeModalExperience)="closeModal($event)"  [title]="title" (dataExperienceForm)="setDataFormExperience($event)"></app-modal-experience>
+    </div>
+  </div>
