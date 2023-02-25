@@ -8,7 +8,7 @@ import { Education, EducationDto } from 'src/model/Education';
   providedIn: 'root'
 })
 export class EducationService {
-  private apiServerUrl = environment.apiBaseUrl
+   apiServerUrl = environment.apiBaseUrl
 
 
   constructor(private http: HttpClient) { }

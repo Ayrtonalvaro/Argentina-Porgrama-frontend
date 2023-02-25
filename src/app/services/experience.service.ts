@@ -9,7 +9,7 @@ import { Experience, ExperienceDto } from 'src/model/Experience';
   providedIn: 'root'
 })
 export class ExperienceService {
-  private apiServerUrl = environment.apiBaseUrl
+  apiServerUrl = environment.apiBaseUrl
 
 
   constructor(private http: HttpClient) { }

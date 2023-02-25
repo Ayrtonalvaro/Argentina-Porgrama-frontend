@@ -81,6 +81,10 @@ export class ProjectsSectionComponent implements OnInit {
     this.stateModal = !this.stateModal
   }
 
+  closeModal(newState: boolean) {
+    this.stateModal = newState
+  }
+
 
 
 

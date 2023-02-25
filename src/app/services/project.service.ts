@@ -11,7 +11,7 @@ export class ProjectService {
 
   constructor(private http: HttpClient) { }
 
-  private apiServerUrl = environment.apiBaseUrl
+   apiServerUrl = environment.apiBaseUrl
 
   getProjects():Observable<Project[]> {
     return this.http.get<Project[]>(`${this.apiServerUrl}/project/all`)

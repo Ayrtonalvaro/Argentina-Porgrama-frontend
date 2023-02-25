@@ -6,7 +6,7 @@
       <div *ngIf="!stateModal"
         class="bg-gradient-to-r from-black to-slate-900 absolute top-0 right-5 left-72 border border-cyan-600 w-96 h-96 z-10">
         <div class="p-1">
-          <app-modal-form [title]="'Agregar'" (dataFormProject)="addProject($event)"></app-modal-form>
+          <app-modal-form (closeModalProject)="closeModal($event)" [title]="'Agregar'" (dataFormProject)="addProject($event)"></app-modal-form>
         </div>
       </div>
   <app-show-button (open)="showSection($event)" (close)="showSection($event)"></app-show-button>

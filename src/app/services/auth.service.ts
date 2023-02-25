@@ -11,7 +11,7 @@ import { NuevoUsuario } from 'src/model/Nuevo-usuario';
 })
 export class AuthService {
 
-  private apiServerUrl = environment.apiBaseUrl
+   apiServerUrl = environment.apiBaseUrl
 
   authURL: string = this.apiServerUrl + '/auth/';
 
@@ -25,5 +25,5 @@ export class AuthService {
     return this.http.post<JwtDto>(`${this.authURL}login`, loginUsuario);
   }
 
-  
+
 }

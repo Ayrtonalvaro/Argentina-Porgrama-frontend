@@ -33,6 +33,11 @@ export class CardProjectComponent implements OnInit {
     this.projectEdit(this.project.id)
   }
 
+  closeModal(newState:boolean) {
+    console.log(newState)
+
+  }
+
   projectModalEdit: ProjectDto = {
     title: '',
     linkGithub: '',

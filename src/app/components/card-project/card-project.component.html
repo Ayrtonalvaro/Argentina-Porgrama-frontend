@@ -22,7 +22,7 @@
     </button>
     <div *ngIf="stateModal"
       class="bg-gradient-to-r from-black to-slate-900 absolute top-0 left-8 border border-cyan-600   z-50">
-      <app-modal-form  (dataFormProject)="setFormProject($event)" [title]="'Actualizar'"></app-modal-form>
+      <app-modal-form (closeModalProject)="closeModal($event)" (dataFormProject)="setFormProject($event)" [title]="'Actualizar'"></app-modal-form>
     </div>
   </div>
 </div>

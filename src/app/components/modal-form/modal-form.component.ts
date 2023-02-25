@@ -8,6 +8,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class ModalFormComponent implements OnInit {
 
   @Output() dataFormProject = new EventEmitter<any>();
+  @Output() closeModalProject = new EventEmitter<any>();
   @Input() title: string = '';
 
   projectForm = new FormGroup( {
@@ -25,6 +26,10 @@ export class ModalFormComponent implements OnInit {
     this.projectForm.reset()
   }
 
+  modalState: boolean = true
+  closeModal(){
+    this.closeModalProject.emit(this.modalState)
+  }
 
 
 

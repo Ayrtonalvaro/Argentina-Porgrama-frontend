@@ -10,7 +10,7 @@ import { Skill, SkillDto } from 'src/model/Skill';
   providedIn: 'root'
 })
 export class SkillService {
-  private apiServerUrl = environment.apiBaseUrl
+   apiServerUrl = environment.apiBaseUrl
   constructor(private http: HttpClient) { }
 
   public getSkills():Observable<Skill[]>{

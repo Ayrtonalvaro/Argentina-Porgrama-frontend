@@ -30,7 +30,6 @@ export class ModalExperienceComponent implements OnInit {
 
   modalState: boolean = false
   closeModal(){
-
     this.closeModalExperience.emit(this.modalState)
   }
 

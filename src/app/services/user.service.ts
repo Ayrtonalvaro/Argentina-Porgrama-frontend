@@ -9,12 +9,12 @@ import { User } from 'src/model/user';
   providedIn: 'root'
 })
 export class UserService {
-  private apiServerUrl = environment.apiBaseUrl
+   apiServerUrl = environment.apiBaseUrl
 
   constructor(private http: HttpClient) { }
 
   public getUser ():Observable<User>{
-    return this.http.get<User>(`${this.apiServerUrl}/user/id/2`)
+    return this.http.get<User>(`${this.apiServerUrl}/user/id/1`)
   }
 
   public updateUser(user: User):Observable<User>{
